@@ -14,5 +14,26 @@
 </head>
 <body>
     <p>Loading game... If you are not redirected, <a href="web/index.html">click here</a>.</p>
+<script>
+  (function () {
+    const allowedDomains = [
+      "bulofkgames.blogspot.com",
+      "thebulofkproject.blogspot.com",
+      "github.io"
+    ];
+
+    const OFFICIAL_SITE = "https://bulofkgames.blogspot.com/";
+    const ref = document.referrer.toLowerCase();
+
+    if (!ref) return;
+
+    const allowed = allowedDomains.some(domain => ref.includes(domain));
+
+    if (!allowed) {
+      window.location.replace(OFFICIAL_SITE);
+    }
+  })();
+  </script>
+
 </body>
 </html>
